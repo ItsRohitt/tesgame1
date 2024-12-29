@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pahlawan Rambu Lalu Lintas</title>
+    <link rel="icon" href="asset/PAHLAWAN.jpg" type="image/x-icon">
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
+      
     />
+    <style>
+      /* Kode CSS Responsif */
+      @media (max-width: 768px) {
+        .draggable-objects,
+        .drop-points {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      </Style>
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -18,15 +33,17 @@
     </div>
 
     <div class="controls-container">
-      <h2>Kelompok 5</h2>
-      <h3>Rohit Setianor</h3>
-      <h3>Muhammad Reza Syafii</h3>
-      <h3>Tegar Nurandika Putra</h3>
-      <h3>Humayra Rahima</h3>
-      <audio id="game-music" src="asset/music.mp3" preload="auto"></audio>
+      <h2>Kelompok 5 </h2>
+      <h4>GAME TEBAK TEBAKAN RAMBU LALU LINTAS</h4>
+      <h3>DIBUAT OLEH :</h3>
+      <h5>Rohit Setianor</h5>
+      <h5>Muhammad Reza Syafii</h5>
+      <h5>Tegar Nurandika Putra</h5>
+      <h5>Humayra Rahima</h5>
+      <audio id="game-music" src="asset/music.mp3" preload="auto" loop></audio>
       <p id="result"></p>
       <button id="start">Mulai Game</button>
     </div>
-    <script src="script.js"></script>
+    <script src="script2.js"></script>
   </body>
 </html>

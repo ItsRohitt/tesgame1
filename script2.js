@@ -14,6 +14,7 @@ document.getElementById("start").addEventListener("click", function () {
   // Tambahkan logika game lainnya di sini
 });
 
+// Data rambu lalu lintas
 const data = [
   "Dilarang Berbicara",
   "Dilarang Masuk",
@@ -73,19 +74,38 @@ let level = 1;
 let lives = levelConfig[1].lives; // Start with level 1 lives
 let timer = levelConfig[1].timer; // Timer awal dari level 1
 
+// Membuat timer dan lives display
 const timerDisplay = document.createElement("p");
 timerDisplay.id = "timer";
 timerDisplay.style.color = "white";
 timerDisplay.style.fontSize = "1.5em";
 timerDisplay.style.textAlign = "center";
+timerDisplay.style.position = "absolute";
+timerDisplay.style.top = "20px"; // Timer berada di kiri atas
+timerDisplay.style.left = "20px";
+timerDisplay.style.textShadow = `
+  -1px -1px 0 black,  
+  1px -1px 0 black,  
+  -1px 1px 0 black,  
+  1px 1px 0 black`; // Garis stroke di sekitar teks
+
 const livesDisplay = document.createElement("p");
 livesDisplay.id = "lives";
 livesDisplay.style.color = "white";
 livesDisplay.style.fontSize = "1.5em";
 livesDisplay.style.textAlign = "center";
+livesDisplay.style.position = "absolute";
+livesDisplay.style.top = "60px"; // Lives berada di bawah timer
+livesDisplay.style.left = "20px";
+livesDisplay.style.textShadow = `
+  -1px -1px 0 black,  
+  1px -1px 0 black,  
+  -1px 1px 0 black,  
+  1px 1px 0 black`; // Garis stroke di sekitar teks
 
-controls.insertBefore(timerDisplay, startButton);
-controls.insertBefore(livesDisplay, startButton);
+
+document.body.appendChild(timerDisplay);
+document.body.appendChild(livesDisplay);
 
 // Fungsi untuk memperbarui timer dan nyawa
 const updateHUD = () => {
@@ -106,14 +126,9 @@ const startTimer = () => {
       clearInterval(timerInterval);
       lives--;
       if (lives <= 0) {
-       
         result.textContent = "Game Over!";
         result.style.color = "red"; // Ganti warna menjadi merah
-        result.style.textShadow = `
-      -1px -1px 0 black, 
-      1px -1px 0 black,  
-      -1px 1px 0 black,  
-      1px 1px 0 black`;  
+        result.style.textShadow = `-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black`;  
         stopGame();
       } else {
         alert("Waktu Habis COBA LAGI!");
@@ -130,11 +145,7 @@ const nextLevel = () => {
     result.textContent =
       "Congratulations! KAMU MENJADI PAHLAWAN RAMBU LALU LINTAS!";
     result.style.color = "green"; // Ganti warna menjadi hijau
-     result.style.textShadow = `
-      -1px -1px 0 black, 
-      1px -1px 0 black,  
-      -1px 1px 0 black,  
-      1px 1px 0 black`;  
+    result.style.textShadow = `-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black`;  
     stopGame();
     return;
   }
@@ -204,9 +215,7 @@ const touchMove = (e) => {
     currentSelectedElement.parentElement.style.top =
       currentSelectedElement.parentElement.offsetTop - (initialY - newY) + "px";
     currentSelectedElement.parentElement.style.left =
-      currentSelectedElement.parentElement.offsetLeft -
-      (initialX - newX) +
-      "px";
+      currentSelectedElement.parentElement.offsetLeft - (initialX - newX) + "px";
     initialX = newX;
     initialY - newY;
   }
@@ -287,7 +296,6 @@ const creator = () => {
     flagDiv.setAttribute("draggable", true);
     if (isTouchDevice()) {
       flagDiv.style.position = "absolute";
-      // Posisi random yang lebih tersebar di level tinggi
       const randomTop = Math.floor(Math.random() * (70 + level * 10)) + "%";
       const randomLeft = Math.floor(Math.random() * (70 + level * 10)) + "%";
       flagDiv.style.top = randomTop;

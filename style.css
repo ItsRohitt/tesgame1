@@ -44,6 +44,7 @@ h2 {
   letter-spacing: 0.03em;
   line-height: 1.8em;
   color: #0800ff;
+  font-family: "Lucida Handwriting", cursive;
 }
 
 h3 {
@@ -57,6 +58,33 @@ h3 {
   color: #000000;
 }
 
+h4 {
+  text-align: center;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.8em;
+  color: #8b02c6;
+  font-family: "arial", sans-serif;
+  text-shadow: 
+    -1px -1px 0 #ffffff, /* Bayangan ke kiri atas */
+    1px -1px 0 #ffffff,  /* Bayangan ke kanan atas */
+    -1px 1px 0 #ffffff,  /* Bayangan ke kiri bawah */
+    1px 1px 0 #ffffff;   /* Bayangan ke kanan bawah */
+}
+
+h5 {
+  text-align: center;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 1. em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.8em;
+  color: #000000;
+}
 /* Gaya untuk draggable objects dan drop points */
 .draggable-objects,
 .drop-points {
@@ -137,4 +165,55 @@ img {
 
 .error {
   color: red;
+}
+
+/* Kode CSS lainnya */
+
+/* Responsif untuk tampilan mobile */
+@media (max-width: 768px) {
+  .draggable-objects,
+  .drop-points {
+    display: flex;
+    flex-wrap: wrap; /* Untuk membuat elemen bisa ditata secara fleksibel */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .draggable-image {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .countries {
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+  }
+
+  #timer, #lives {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Jika layar lebih kecil, sesuaikan ukuran font dan elemen */
+  .draggable-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .countries {
+    width: 80px;
+    height: 35px;
+    font-size: 12px;
+  }
+
+  #timer, #lives {
+    font-size: 1em;
+  }
 }
