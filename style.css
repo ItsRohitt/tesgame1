@@ -1,0 +1,140 @@
+/* Reset dan pengaturan dasar */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: url("asset/BackGround.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Gaya untuk container utama */
+.container {
+  width: 90%;
+  max-width: 80%;
+  background-color: #00000066;
+  padding: 3em 0.5em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 0.8em;
+}
+
+h1 {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto 2em auto;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.8em;
+  color: #ffffff;
+}
+
+h2 {
+  text-align: center;
+  width: 60%;
+  margin: 5px 0;
+  font-size: 3em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.8em;
+  color: #0800ff;
+}
+
+h3 {
+  text-align: center;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.8em;
+  color: #000000;
+}
+
+/* Gaya untuk draggable objects dan drop points */
+.draggable-objects,
+.drop-points {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
+}
+
+.draggable-image {
+  width: 8em;
+  cursor: move;
+}
+
+img {
+  width: 8em;
+  filter: drop-shadow(0 0.3em 0.9em rgba(255, 255, 255, 0.25));
+}
+
+/* Gaya untuk elemen drop points berbentuk lingkaran */
+.countries {
+  width: 10em; /* Lebar elemen */
+  height: 10em; /* Tinggi elemen sama dengan lebar */
+  display: grid;
+  place-items: center; /* Memastikan konten berada di tengah horizontal dan vertikal */
+  border: 0.25em dashed #ffffff; /* Garis tepi */
+  color: #ffffff; /* Warna teks */
+  text-align: center; /* Teks berada di tengah elemen */
+  font-size: 1em; /* Ukuran font */
+  font-weight: bold; /* Menebalkan teks jika diperlukan */
+  line-height: normal; /* Menghindari efek teks terlalu tinggi */
+  border-radius: 50%; /* Membuat elemen berbentuk lingkaran */
+}
+
+.dropped {
+  padding: 0;
+  background-color: #00020cc2;
+}
+
+/* Gaya untuk container kontrol */
+.controls-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: url("asset/BackGround.png") no-repeat center center fixed;
+  background-size: cover;
+  flex-direction: column;
+  top: 0;
+}
+
+.controls-container button {
+  font-size: 1.12em;
+  padding: 0.8em 1em;
+  border-radius: 0.2em;
+  border: none;
+  outline: none;
+  color: #efefef;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  background-color: #000000;
+}
+
+.controls-container p {
+  color: #ffffff;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.hide {
+  display: none;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
